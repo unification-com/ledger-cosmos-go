@@ -53,7 +53,7 @@ func FindLedgerCosmosUserApp() (*LedgerCosmos, error) {
 	if err != nil {
 		defer ledgerAPI.Close()
 		if err.Error() == "[APDU_CODE_CLA_NOT_SUPPORTED] Class not supported" {
-			return nil, fmt.Errorf("are you sure the Cosmos app is open?")
+			return nil, fmt.Errorf("are you sure the Unification app is open?")
 		}
 		return nil, err
 	}
@@ -128,7 +128,7 @@ func (ledger *LedgerCosmos) SignSECP256K1(bip32Path []uint32, transaction []byte
 // GetPublicKeySECP256K1 retrieves the public key for the corresponding bip32 derivation path (compressed)
 // this command DOES NOT require user confirmation in the device
 func (ledger *LedgerCosmos) GetPublicKeySECP256K1(bip32Path []uint32) ([]byte, error) {
-	pubkey, _, err := ledger.getAddressPubKeySECP256K1(bip32Path, "cosmos", false)
+	pubkey, _, err := ledger.getAddressPubKeySECP256K1(bip32Path, "und", false)
 	return pubkey, err
 }
 
