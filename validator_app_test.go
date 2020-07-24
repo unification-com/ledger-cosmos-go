@@ -48,7 +48,7 @@ func Test_ValGetPublicKey(t *testing.T) {
 
 	validatorApp.api.Logging = true
 
-	path := []uint32{44, 118, 0, 0, 0}
+	path := []uint32{44, 5555, 0, 0, 0}
 
 	for i := 1; i < 10; i++ {
 		pubKey, err := validatorApp.GetPublicKeyED25519(path)
