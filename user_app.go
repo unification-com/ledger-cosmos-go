@@ -83,7 +83,7 @@ func (ledger *LedgerCosmos) CheckVersion(ver VersionInfo) error {
 	case 1:
 		return CheckVersion(ver, VersionInfo{0, 1, 5, 1})
 	case 2:
-		return CheckVersion(ver, VersionInfo{0, 2, 1, 0})
+		return CheckVersion(ver, VersionInfo{0, 2, 16, 0})
 	default:
 		return fmt.Errorf("App version is not supported")
 	}
